@@ -10,7 +10,9 @@
 <body>
     <header>
         <button class = "highscores" >View Highscores</button>
-        <div class = "timer" > Time: </div>
+        <div class = "timer" > 
+            <span class = "timer-seconds"> </span>
+        </div>
         
     </header>
 
@@ -26,8 +28,31 @@
     </div>
     
     <div class = "question-page">
-        
+        <h2><span id = "question"></span></h2>
+        <button><span id = "choiceA"> </span></button>
+        <button><span id = "choiceB"> </span></button>
+        <button><span id = "choiceC"> </span></button>
+        <button><span id = "choiceD"> </span></button>
     </div>
+
+    <div class = "end-of-game">
+        <h2>All Done!</h2>
+        <p>Your Final score is: <span id = "final-time"></span></p>
+        <form >
+            <label for="initials">Please enter your initials: </label>
+            <input type="text" id = "user-initials" name="initials">
+        </form>
+    </div>
+
+    <div class = "highscore">
+        <h2>Highscores</h2>
+        <ul>
+            <li>Initials here</li>
+        </ul>
+        <button class = "go-back">Go Back</button>
+        <button class = "clear-highscores">Clear Highscores</button>
+    </div>
+
 </body>
 <script src="./assets/script.js"></script>
 </html>

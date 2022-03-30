@@ -1,5 +1,7 @@
 // Variables to get from HTML
-
+var startBtn = document.querySelector('.start-btn');
+var highscoresBtn = document.querySelector('.highscores');
+var timer = document.querySelector('.timer');
 // Array of questions objects
 
 var questions = [
@@ -70,3 +72,12 @@ function timer() {
     }, 1000);
 }
 
+function displayQuestion(arrayIndex) {
+    document.getElementById("question").innerHTML = arrayIndex.question;
+    document.getElementById("choiceA").innerHTML = arrayIndex.answers.a;
+    document.getElementById("choiceB").innerHTML = arrayIndex.answers.b;
+    document.getElementById("choiceC").innerHTML = arrayIndex.answers.c;
+    document.getElementById("choiceD").innerHTML = arrayIndex.answers.d;
+}
+
+displayQuestion(questions[0]);
