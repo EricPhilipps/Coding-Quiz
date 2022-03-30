@@ -8,6 +8,10 @@ var highscoresBtn = document.querySelector('.highscores');
 var timer = document.querySelector('.timer');
 var goBackBtn = document.querySelector('.go-back');
 var clearHighscores = document.querySelector('.clear-highscores');
+var questionsIndex = 0;
+var corAnswer = document.querySelector('#correct-answer');
+var userCorrect = document.querySelector('#user-correct');
+
 
 questionPage.style.display = "none";
 endOfGamePage.style.display = "none";
@@ -18,12 +22,78 @@ startBtn.addEventListener('click', function(event){
     //timer();
     startPage.style.display = "none";
     questionPage.style.display = "block";
-})
+    corAnswer.style.display = "none";
+
+    displayQuestion(questions[questionsIndex]);
+});
+
+choiceA.addEventListener('click', function(event){
+    if (corAnswer === 'a') {
+        document.getElementById("user-correct").innerHTML = "Correct!";
+        questionsIndex++;
+    }
+    else {
+        //timer = timer - 10
+        document.getElementById("user-correct").innerHTML = "Incorrect";
+        questionsIndex++;
+    }
+    displayQuestion(questions[questionsIndex]);
+});
+
+choiceB.addEventListener('click', function(event){
+    if (corAnswer === 'b') {
+        document.getElementById("user-correct").innerHTML = "Correct!";
+        questionsIndex++;
+    }
+    else {
+        //timer = timer - 10
+        document.getElementById("user-correct").innerHTML = "Incorrect";
+        questionsIndex++;
+    }
+    displayQuestion(questions[questionsIndex]);
+});
+
+choiceC.addEventListener('click', function(event){
+    if (corAnswer === 'c') {
+        document.getElementById("user-correct").innerHTML = "Correct!";
+        questionsIndex++;
+    }
+    else {
+        //timer = timer - 10
+        document.getElementById("user-correct").innerHTML = "Incorrect";
+        questionsIndex++;
+    }
+    displayQuestion(questions[questionsIndex]);
+});
+
+choiceD.addEventListener('click', function(event){
+    if (corAnswer === 'd') {
+        document.getElementById("user-correct").innerHTML = "Correct!";
+        questionsIndex++;
+    }
+    else {
+        //timer = timer - 10
+        document.getElementById("user-correct").innerHTML = "Incorrect";
+        questionsIndex++;
+    }
+    displayQuestion(questions[questionsIndex]);
+});
+
+goBackBtn.addEventListener('click', function(event){
+    startPage.style.display = "block";
+    highscorePage.style.display = "none";
+
+});
+
+highscoresBtn.addEventListener('click', function(event){
+    startPage.style.display = "none";
+    questionPage.style.display = "none";
+    endOfGamePage.style.display = "none";
+    highscorePage.style.display = "block";
+
+});
 
 // Array of questions objects
-
-
-
 var questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -100,6 +170,5 @@ function displayQuestion(arrayIndex) {
     document.getElementById("choiceB").innerHTML = arrayIndex.answers.b;
     document.getElementById("choiceC").innerHTML = arrayIndex.answers.c;
     document.getElementById("choiceD").innerHTML = arrayIndex.answers.d;
+    document.getElementById("correct-answer").innerHTML = arrayIndex.correctAnswer;
 }
-
-function 
