@@ -1,8 +1,28 @@
 // Variables to get from HTML
 var startBtn = document.querySelector('.start-btn');
+var startPage = document.querySelector('.start-page')
+var questionPage = document.querySelector('.question-page');
+var endOfGamePage = document.querySelector('.end-of-game');
+var highscorePage = document.querySelector('.highscore');
 var highscoresBtn = document.querySelector('.highscores');
 var timer = document.querySelector('.timer');
+var goBackBtn = document.querySelector('.go-back');
+var clearHighscores = document.querySelector('.clear-highscores');
+
+questionPage.style.display = "none";
+endOfGamePage.style.display = "none";
+highscorePage.style.display = "none";
+
+startBtn.addEventListener('click', function(event){
+    
+    //timer();
+    startPage.style.display = "none";
+    questionPage.style.display = "block";
+})
+
 // Array of questions objects
+
+
 
 var questions = [
     {
@@ -72,6 +92,8 @@ function timer() {
     }, 1000);
 }
 
+
+
 function displayQuestion(arrayIndex) {
     document.getElementById("question").innerHTML = arrayIndex.question;
     document.getElementById("choiceA").innerHTML = arrayIndex.answers.a;
@@ -80,4 +102,4 @@ function displayQuestion(arrayIndex) {
     document.getElementById("choiceD").innerHTML = arrayIndex.answers.d;
 }
 
-displayQuestion(questions[0]);
+function 
