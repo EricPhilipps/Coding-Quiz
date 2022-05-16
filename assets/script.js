@@ -3,18 +3,14 @@ var startBtn = document.querySelector('.start-btn');
 var startPage = document.querySelector('.start-page')
 var questionPage = document.querySelector('.question-page');
 var endOfGamePage = document.querySelector('.end-of-game');
-var highscorePage = document.querySelector('.highscore');
 var highscoresBtn = document.querySelector('.highscores');
 var timer = document.querySelector('.timer');
-var goBackBtn = document.querySelector('.go-back');
-var clearHighscores = document.querySelector('.clear-highscores');
 var corAnswer = document.querySelector('#correct-answer');
 var userCorrect = document.querySelector('#user-correct');
 var aBtn = document.querySelector('#aBtn');
 var bBtn = document.querySelector('#bBtn');
 var cBtn = document.querySelector('#cBtn');
 var dBtn = document.querySelector('#dBtn');
-var hsList = document.querySelector('#highscore-list');
 var submitBtn = document.querySelector('#initial-submit');
 var userInitials = document.querySelector('#user-initials');
 
@@ -75,9 +71,12 @@ var questions = [
 var questionsIndex = 0;
 questionPage.style.display = "none";
 endOfGamePage.style.display = "none";
-highscorePage.style.display = "none";
 
-startBtn.addEventListener('click', function(event){
+highscoresBtn.addEventListener('click', function(){
+    window.location.replace("./highscores.html")
+});
+
+startBtn.addEventListener('click', function(){
     
     //timer();
     startPage.style.display = "none";
@@ -87,7 +86,7 @@ startBtn.addEventListener('click', function(event){
     displayQuestion(questions[questionsIndex]);
 });
 
-aBtn.addEventListener('click', function(event){
+aBtn.addEventListener('click', function(){
     if (questions[questionsIndex].correctAnswer === 'a') {
         document.getElementById("user-correct").innerHTML = "Correct!";
         questionsIndex++;
@@ -106,7 +105,7 @@ aBtn.addEventListener('click', function(event){
     }
 });
 
-bBtn.addEventListener('click', function(event){
+bBtn.addEventListener('click', function(){
     if (questions[questionsIndex].correctAnswer === 'b') {
         document.getElementById("user-correct").innerHTML = "Correct!";
         questionsIndex++;
@@ -125,7 +124,7 @@ bBtn.addEventListener('click', function(event){
     }
 });
 
-cBtn.addEventListener('click', function(event){
+cBtn.addEventListener('click', function(){
     if (questions[questionsIndex].correctAnswer === 'c') {
         document.getElementById("user-correct").innerHTML = "Correct!";
         questionsIndex++;
@@ -144,7 +143,7 @@ cBtn.addEventListener('click', function(event){
     }
 });
 
-dBtn.addEventListener('click', function(event){
+dBtn.addEventListener('click', function(){
     if (questions[questionsIndex].correctAnswer === 'd') {
         document.getElementById("user-correct").innerHTML = "Correct!";
         questionsIndex++;
@@ -163,20 +162,8 @@ dBtn.addEventListener('click', function(event){
     }
 });
 
-
-goBackBtn.addEventListener('click', function(event){
-    startPage.style.display = "block";
-    highscorePage.style.display = "none";
-
-});
-
-highscoresBtn.addEventListener('click', function(event){
-    showHighscores();
-    
-});
-
 // save users highscore to the local storage and show highscores page
-submitBtn.addEventListener('click', function(event){
+submitBtn.addEventListener('click', function(){
     var initials = userInitials.value;
 
     if (initials === null) {
@@ -200,11 +187,8 @@ submitBtn.addEventListener('click', function(event){
         var newHighscores = JSON.stringify(highscores);
         localStorage.setItem("highscores", newHighscores);
     }
-    showHighscores();
+    window.location.replace("../highscores.html");
 });
-
-
-
 
 function timer() {
     var timeLeft = 70;
@@ -226,13 +210,6 @@ function stopQuiz() {
     endOfGamePage.style.display = "block";
     highscorePage.style.display = "none";
     questionsIndex = 0;
-}
-
-function showHighscores() {
-    startPage.style.display = "none";
-    questionPage.style.display = "none";
-    endOfGamePage.style.display = "none";
-    highscorePage.style.display = "block";
 }
 
 function displayQuestion(arrayIndex) {
