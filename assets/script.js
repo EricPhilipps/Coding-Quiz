@@ -4,15 +4,16 @@ var startPage = document.querySelector('.start-page')
 var questionPage = document.querySelector('.question-page');
 var endOfGamePage = document.querySelector('.end-of-game');
 var highscoresBtn = document.querySelector('.highscores');
-var timer = document.querySelector('.timer');
 var corAnswer = document.querySelector('#correct-answer');
 var userCorrect = document.querySelector('#user-correct');
+var finalTime = document.querySelector('#final-time');
 var aBtn = document.querySelector('#aBtn');
 var bBtn = document.querySelector('#bBtn');
 var cBtn = document.querySelector('#cBtn');
 var dBtn = document.querySelector('#dBtn');
 var submitBtn = document.querySelector('#initial-submit');
 var userInitials = document.querySelector('#user-initials');
+var time = document.querySelector('#time-left');
 
 // Array of questions objects
 var questions = [
@@ -69,6 +70,8 @@ var questions = [
 ]
 
 var questionsIndex = 0;
+var timeLeft = 70;
+var scoreTime = 0;
 questionPage.style.display = "none";
 endOfGamePage.style.display = "none";
 
@@ -77,8 +80,7 @@ highscoresBtn.addEventListener('click', function(){
 });
 
 startBtn.addEventListener('click', function(){
-    
-    //timer();
+    timer();
     startPage.style.display = "none";
     questionPage.style.display = "block";
     corAnswer.style.display = "none";
@@ -92,12 +94,13 @@ aBtn.addEventListener('click', function(){
         questionsIndex++;
     }
     else {
-        //timer = timer - 10
-        document.getElementById("user-correct").innerHTML = "Incorrect";
+        timeLeft = timeLeft - 10;
+        document.getElementById("user-correct").innerHTML = "Incorrect, Correct Answer: " + questions[questionsIndex].correctAnswer;
         questionsIndex++;
     }
 
     if (questionsIndex === questions.length - 1) {
+        scoreTime = timeLeft;
         stopQuiz();
     }
     else {
@@ -111,12 +114,13 @@ bBtn.addEventListener('click', function(){
         questionsIndex++;
     }
     else {
-        //timer = timer - 10
-        document.getElementById("user-correct").innerHTML = "Incorrect";
+        timeLeft = timeLeft - 10;
+        document.getElementById("user-correct").innerHTML = "Incorrect, Correct Answer: " + questions[questionsIndex].correctAnswer;
         questionsIndex++;
     }
 
     if (questionsIndex === questions.length - 1) {
+        scoreTime = timeLeft;
         stopQuiz();
     }
     else {
@@ -130,12 +134,13 @@ cBtn.addEventListener('click', function(){
         questionsIndex++;
     }
     else {
-        //timer = timer - 10
-        document.getElementById("user-correct").innerHTML = "Incorrect";
+        timeLeft = timeLeft - 10;
+        document.getElementById("user-correct").innerHTML = "Incorrect, Correct Answer: " + questions[questionsIndex].correctAnswer;
         questionsIndex++;
     }
 
     if (questionsIndex === questions.length - 1) {
+        scoreTime = timeLeft;
         stopQuiz();
     }
     else {
@@ -149,12 +154,13 @@ dBtn.addEventListener('click', function(){
         questionsIndex++;
     }
     else {
-        //timer = timer - 10
-        document.getElementById("user-correct").innerHTML = "Incorrect";
+        timeLeft = timeLeft - 10;
+        document.getElementById("user-correct").innerHTML = "Incorrect, Correct Answer: " + questions[questionsIndex].correctAnswer;
         questionsIndex++;
     }
 
     if (questionsIndex === questions.length - 1) {
+        scoreTime = timeLeft;
         stopQuiz();
     }
     else {
@@ -173,7 +179,7 @@ submitBtn.addEventListener('click', function(){
     else { 
         var userInfo = {
             initials: initials,
-            score: timeLeft
+            score: scoreTime
         }
         var highscores = localStorage.getItem('highscores');
         if (highscores === null) {
@@ -187,19 +193,19 @@ submitBtn.addEventListener('click', function(){
         var newHighscores = JSON.stringify(highscores);
         localStorage.setItem("highscores", newHighscores);
     }
-    window.location.replace("../highscores.html");
+    window.location.href("../highscores.html");
 });
 
 function timer() {
-    var timeLeft = 70;
-
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
             timeLeft--;
+            time.textContent = "Timer: " + timeLeft;
         }
         else {
             clearInterval(timeInterval);
             stopQuiz();
+            time.textContent = "Time's up";
         }
     }, 1000);
 }
@@ -208,8 +214,9 @@ function stopQuiz() {
     startPage.style.display = "none";
     questionPage.style.display = "none";
     endOfGamePage.style.display = "block";
-    highscorePage.style.display = "none";
     questionsIndex = 0;
+    time.style.display = "none";
+    finalTime.textContent = scoreTime;
 }
 
 function displayQuestion(arrayIndex) {

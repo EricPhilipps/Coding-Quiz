@@ -2,24 +2,6 @@ var goBackBtn = document.querySelector('.go-back');
 var clearHighscores = document.querySelector('.clear-highscores');
 var hsList = document.querySelector('#highscore-list');
 
-var testingLocal = [
-    {
-        initials: "EP",
-        score: 20
-    },
-    {
-        initials: "TJ",
-        score: 50
-    }
-];
-
-console.log(testingLocal)
-
-var testing = JSON.stringify(testingLocal);
-localStorage.setItem("highscores", testing);
-
-console.log("hello");
-
 goBackBtn.addEventListener('click', function(){
     window.location.replace("./index.html");
 });
