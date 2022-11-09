@@ -1,6 +1,6 @@
 <h1 align="center">Coding Quiz</h1>
 <h1 align="center"></h1>
-<h2 align="center">Technologies Used</h1>
+<h1 align="center">Technologies Used</h1>
 <p align="center">
     <img src="https://img.shields.io/badge/HTML-orange" />
     <img src="https://img.shields.io/badge/CSS-blue" />
