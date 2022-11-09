@@ -33,14 +33,14 @@ The application starts off with a start screen in which you can either start the
 
 <h1 align="center">Live Link to Current Production State</h1>
 
-<p align="center"><a href="https://ericphilipps.github.io/Coding-Quiz/">Link to Generator!</a></p>
+<p align="center"><a href="https://ericphilipps.github.io/Coding-Quiz/">Link to Quiz</a></p>
 
 <h2 align="center">Github Repo for Generator</h2>
-<p align="center"><a href="https://github.com/EricPhilipps/Coding-Quiz">Generator Repo Here!</a></p>
+<p align="center"><a href="https://github.com/EricPhilipps/Coding-Quiz">Quiz Repository</a></p>
 
 ---
 
 <h1 align="center">Link to Author's Github</h1>
 
-<p align="center">Stuart Martin</p>
-<p align="center"><a href="https://github.com/StuMartin22">https://github.com/StuMartin22</a></p>
+<p align="center">Eric Philipps</p>
+<p align="center"><a href="https://github.com/ericphilipps">https://github.com/ericphilipps</a></p>
