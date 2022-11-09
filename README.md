@@ -22,7 +22,7 @@ This application was designed to allow the user to take a quiz about coding and 
 
 <h1 align="center">Functionality</h1>
 
-The application starts off with a start screen in which you can either start the quiz or view the highscores. Choosing to start the quiz starts a timer and displays the first question. After the first question is answered it moves to the second question. If the user chooses the incorrect answer, the timer is subtracted 10 seconds. When the user answers all of the questions the quizx is stopped and the timer stops. The user is then prompted to input their initials to save their score. Once they submit their initials they are brought to the highscores page where their highscore is displayed. They can then go back to the start screen to take the quiz again if they choose, or clear the hichscores.
+<p>The application starts off with a start screen in which you can either start the quiz or view the highscores. Choosing to start the quiz starts a timer and displays the first question. After the first question is answered it moves to the second question. If the user chooses the incorrect answer, the timer is subtracted 10 seconds. When the user answers all of the questions the quiz is stopped and the timer stops. The user is then prompted to input their initials to save their score. Once they submit their initials they are brought to the highscores page where their highscore is displayed. They can then go back to the start screen to take the quiz again if they choose, or clear the hichscores.</p>
 ---
 
 <h1 align="center">Contributions</h1>
