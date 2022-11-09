@@ -79,6 +79,7 @@ highscoresBtn.addEventListener('click', function(){
     window.location.replace("./highscores.html")
 });
 
+//Starts quiz and using various functions
 startBtn.addEventListener('click', function(){
     timer();
     startPage.style.display = "none";
@@ -192,6 +193,7 @@ submitBtn.addEventListener('click', function(){
         highscores.push(userInfo);
         dataLength = highscores.length;
 
+        //logic to put the highscores in order according to score
         if (dataLength === 1) {
             
         }
@@ -217,9 +219,10 @@ submitBtn.addEventListener('click', function(){
         var newHighscores = JSON.stringify(highscores);
         localStorage.setItem("highscores", newHighscores);
     }
-    window.location.href("./highscores.html");
+    window.location.replace("./highscores.html");
 });
 
+//starts a timer
 function timer() {
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
@@ -234,6 +237,7 @@ function timer() {
     }, 1000);
 }
 
+//stops the quiz and displays end of quiz page
 function stopQuiz() {
     startPage.style.display = "none";
     questionPage.style.display = "none";
@@ -243,6 +247,7 @@ function stopQuiz() {
     finalTime.textContent = scoreTime;
 }
 
+//displays the questions, takes the index (question number) quiz is currently at as argument
 function displayQuestion(arrayIndex) {
     document.getElementById("question").innerHTML = arrayIndex.question;
     document.getElementById("choiceA").innerHTML = arrayIndex.answers.a;
