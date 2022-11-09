@@ -35,7 +35,7 @@ This application was designed to allow the user to take a quiz about coding and 
 
 <p align="center"><a href="https://ericphilipps.github.io/Coding-Quiz/">Link to Quiz</a></p>
 
-<h2 align="center">Github Repo for Generator</h2>
+<h2 align="center">Github Repo for Quiz</h2>
 <p align="center"><a href="https://github.com/EricPhilipps/Coding-Quiz">Quiz Repository</a></p>
 
 ---
