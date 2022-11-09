@@ -176,10 +176,10 @@ submitBtn.addEventListener('click', function(){
         alert('Please enter your initials!');
     }
 
-    else { 
+    else {
         var userInfo = {
             initials: initials,
-            score: scoreTime
+            score: parseInt(scoreTime)
         }
         var highscores = localStorage.getItem('highscores');
         if (highscores === null) {
@@ -190,10 +190,34 @@ submitBtn.addEventListener('click', function(){
         }
         
         highscores.push(userInfo);
+        dataLength = highscores.length;
+
+        if (dataLength === 1) {
+            
+        }
+        else if (dataLength === 2) {
+            if (userInfo.score > highscores[0]) {
+                highscores[1] = highscores[0];
+                highscores[0]= userInfo;
+            }
+        }
+        else {
+            console.log('You are here');
+            for (i = dataLength - 2; i >= 0; i--) {
+                if (userInfo.score > highscores[i]) {
+                    highscores[i + 1] = highscores[i];
+                    highscores[i]= userInfo;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+       
         var newHighscores = JSON.stringify(highscores);
         localStorage.setItem("highscores", newHighscores);
     }
-    window.location.href("../highscores.html");
+    window.location.href("./highscores.html");
 });
 
 function timer() {

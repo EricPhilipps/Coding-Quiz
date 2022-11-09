@@ -1,8 +1,8 @@
-var goBackBtn = document.querySelector('.go-back');
+var homeBtn = document.querySelector('#homeBtn');
 var clearHighscores = document.querySelector('.clear-highscores');
 var hsList = document.querySelector('#highscore-list');
 
-goBackBtn.addEventListener('click', function(){
+homeBtn.addEventListener('click', function(){
     window.location.replace("./index.html");
 });
 

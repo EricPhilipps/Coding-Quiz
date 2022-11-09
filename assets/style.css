@@ -1,0 +1,44 @@
+* {
+    font-family: sans-serif;
+}
+
+.start-page, .question-page, .end-of-game, .highscore {
+    margin: auto;
+    width: 100%;
+    border: 3px;
+    border-color: blue;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    height: 100px;
+}
+
+h1 {
+    font-size: larger;
+}
+
+h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.nav {
+    background-color: rgb(94, 94, 245);
+    width: 100%;
+    height: 10%;
+    display: flex;
+    padding: 5px;
+}
+
+.timer {
+    color: white;
+    text-align: right;
+}
+
+#hsBtn {
+    height: center;
+}
+
+#highscore-list {
+    text-align: center;
+}
